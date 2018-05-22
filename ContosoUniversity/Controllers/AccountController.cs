@@ -432,9 +432,9 @@ namespace ContosoUniversity.Controllers
 
 
         [HttpGet]
-        public IActionResult AccessDenied()
+        public IActionResult AccessDenied(string returnUrl = null)
         {
-            return View();
+            return RedirectToAction("Login", new { returnUrl = returnUrl });
         }
 
         #region Helpers
